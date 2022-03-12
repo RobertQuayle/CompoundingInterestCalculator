@@ -1,6 +1,10 @@
 ﻿using System;
+
+//Used for changing currency formating from $ to £
 using System.Globalization;
 using System.Threading;
+
+//Namespace for Compound Functionality Library
 using CIUtil;
 
 namespace CICalc
