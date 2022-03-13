@@ -7,7 +7,7 @@ using System.Threading;
 //Namespace for Compound Functionality Library
 using CIUtil;
 
-namespace CICalc
+namespace Program
 {
     class Program
     {
@@ -17,7 +17,9 @@ namespace CICalc
             //NOTE: Changes currency formatting of ToString() from $ to £
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB");
 
-            Console.WriteLine("Compound Interest Calculator v1.0.0");
+            Console.WriteLine(Decompound.Monthly(100000, 23, 33, 12, 500));
+
+            Console.WriteLine("\nCompound Interest Calculator v1.0.0");
 
             decimal initialValue = Menu.GetInitialValue();
 
