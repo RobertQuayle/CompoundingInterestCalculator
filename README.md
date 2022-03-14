@@ -8,6 +8,12 @@
 
 - **This repository holds the source code for for a C# library for Compounding Interest.**
 
+```
+using CIUtil;
+
+Compound.Monthly(param1, param2, param3, param4);
+
+```
 
 
 <h2 align="left">About me:</h2>
