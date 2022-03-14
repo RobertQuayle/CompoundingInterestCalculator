@@ -11,7 +11,7 @@
 ```C#
 using CIUtil;
 
-Compound.Monthly(param1, param2, param3, param4);
+Compound.Monthly(double param1, int param2, double param3, double param4);
 
 ```
 
