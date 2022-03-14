@@ -17,6 +17,8 @@ using CIUtil;
     - Compound
       - Monthly()
       - Yearly()
+      - APR() Coming Soon.
+      - Time() Coming Soon.
     
     The Compound class methods both take the same 4 parameters however return slightly different
     information. Both start from an initial value and given timeframe and calculate compounding
