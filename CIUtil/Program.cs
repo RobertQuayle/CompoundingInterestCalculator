@@ -4,9 +4,6 @@
 using System.Globalization;
 using System.Threading;
 
-//Namespace for Compound Functionality Library
-using CIUtil;
-
 namespace Program
 {
     class Program
@@ -17,70 +14,53 @@ namespace Program
             //NOTE: Changes currency formatting of ToString() from $ to £
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB");
 
-            Console.WriteLine(Decompound.Monthly(100000, 23, 33, 12, 500));
+            Menu.Homepage();
 
-            Console.WriteLine("\nCompound Interest Calculator v1.0.0");
-
-            decimal initialValue = Menu.GetInitialValue();
-
-            decimal monthlyCont = Menu.GetMonthlyCont();
-
-            decimal apr = Menu.GetAPR();
-
-            int years = Menu.GetYears();
-
-            string result = Compound.Monthly(initialValue,monthlyCont,apr,years);
-
-            Console.WriteLine($"\nAfter {years} year(s)");
-            Console.WriteLine($"Your initial investment of £{initialValue}");
-            Console.WriteLine($"With monthly contributions of £{monthlyCont}");
-            Console.WriteLine($"At {apr}% APR");
-            Console.WriteLine($"Is now worth {result}");
         }
 
     }
 
     /*
-     Menu Class: Generic-reuseable get methods for user inputs,
-     then parsing them to the correct type.
+     Menu Class: Generic-reuseable methods for user interface.
      TODO: Add Try/Catch validation.
      */
 
     public static class Menu
     {
-
-        public static decimal GetInitialValue()
+        public static void Homepage()
         {
-            Console.WriteLine("\nPlease input your starting amount below:");
-            Console.Write("£");
-            decimal initialValue = decimal.Parse(Console.ReadLine());
-            return initialValue;
-        }
+            Console.WriteLine("\nCompound Interest Calculator v1.3.0");
 
-        public static decimal GetMonthlyCont()
-        {
-            Console.WriteLine("\nPlease input your monthly contributions:");
-            Console.Write("£");
-            decimal monthlyCont = decimal.Parse(Console.ReadLine());
-            return monthlyCont;
-        }
+            Console.WriteLine("\nWelcome! Please select a function from the menu below:\n");
+            Console.WriteLine("1. Compound Interest (Monthly).");
+            Console.WriteLine("2. Compound Interest (Yearly).");
+            Console.WriteLine("3. Decompounding (Monthly).");
+            Console.WriteLine("4. Decompounding (Yearly).");
+            Console.Write("\nNumber:");
 
-        public static decimal GetAPR()
-        {
-            Console.WriteLine("\nPlease input the annual percentage rate (APR):");
-            Console.Write("%");
-            decimal apr = decimal.Parse(Console.ReadLine());
-            return apr;
-        }
+            int input = int.Parse(Console.ReadLine());
 
-        public static int GetYears()
-        {
-            Console.WriteLine("\nPlease input the number of years to calculate:");
-            Console.Write("Years = ");
-            int years = int.Parse(Console.ReadLine());
-            return years;
-        }
+            switch (input)
+            {
+                case 1:
+                    Results.CompoundMonthly();
+                    break;
+                case 2:
+                    Results.CompoundYearly();
+                    break;
+                case 3:
+                    Results.DecompoundMonthly();
+                    break;
+                case 4:
+                    Results.DecompoundYearly();
+                    break;
+                default:
+                    Console.WriteLine("Please try again, input a valid option.");
+                    Homepage();
+                    break;
+            }
 
+        }
     }
 
 }
