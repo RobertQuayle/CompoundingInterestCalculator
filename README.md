@@ -6,7 +6,7 @@
 
 <h2 align="left">About this project:</h2>
 
-- **This repository holds the source code for for a C# library for Compounding Interest.**
+- **This repository holds the source code for a C# library of Compounding Interest Functionality.**
 
 ```C#
 using CIUtil;
