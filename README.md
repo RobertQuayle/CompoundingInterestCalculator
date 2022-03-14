@@ -11,7 +11,34 @@
 ```C#
 using CIUtil;
 
-Compound.Monthly(double param1, int param2, double param3, double param4);
+/*
+    The are two main classes, Compoumd & Decompound. Both with their own unique methods:
+    
+    - Compound
+      - Monthly()
+      - Yearly()
+    
+    The Compound class methods both take the same 4 parameters however return slightly different information. Both start from an
+    initial value and given timeframe and calculate compounding interest off a provided APR(%) and regular contributions.
+    Monthly() adds a contribution onto the initial value then takes the APR(%), divides it by 12 and compounds monthly.
+    Yearly() on the other hand adds adds contributions annually and compounds annually. (NOTE: regularCont has a defualt value of 0).
+*/    
+    
+Compound.Monthly(double startValue, int years, double apr, double regularCont = 0);
+Compound.Yearly(double startValue, int years, double apr, double regularCont = 0);
+
+/*
+    - Decompound
+      - Monthly()
+      - Yearly()
+    
+    The Decompound class starts from a target value, a retirement goal for example. Then "reverse compounds" to display the amount
+    you will have to invest monthly/yearly to reach your goal within your given timeframe. Both methods take 4 parameters, the goal amount, your
+    current age, desired retirement age and APR(%).
+*/
+
+Decompound.Monthly(double goalAmount, int currentAge, int retirementAge, double apr);
+Decompound.Yearly(double goalAmount, int currentAge, int retirementAge, double apr);
 
 ```
 
