@@ -8,9 +8,6 @@
 
 - **This repository holds the source code for for a C# library for Compounding Interest.**
 
-- **I've recently finished creating mock-ups and wireframes for the layout of my site along with outlining my planned content. I'm now ready to start development. - 11/02/2022**
-
-- **Tech-Stack(Subject to change): React.js, Tailwindcss, Animate.css, Framer-Motion.**
 
 
 <h2 align="left">About me:</h2>
